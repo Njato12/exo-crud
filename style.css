@@ -1,42 +1,12 @@
+@import url('./styles//_card.css');
+@import url('/styles//_form.css');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-.card_container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 20px 50px;
-}
-
-.card {
-    width: 100%;
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-
-}
-
-.card:hover {
-    animation: animate 0.9s ease-in-out;
-}
-
-.card_btn {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    grid-column: span 3;
-    padding: 10px 0;
-}
 
 figure {
     width: 110px;
@@ -59,11 +29,7 @@ figure>img {
     align-items: center;
 }
 
-.card:hover {
-    cursor: pointer;
-    background-color: #bbb8b8;
-    color: white;
-}
+
 
 .container_profil {
     width: 100%;
@@ -87,19 +53,7 @@ figure>img {
 }
 
 
-.card_profil {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 70px;
-}
 
-.card_profil img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    background-color: #d9d9d9;
-}
 
 .info {
     grid-column: span 3;
@@ -131,12 +85,7 @@ figure>img {
     border-radius: 5px;
 }
 
-.card_container p,
-.card_container figure,
-.card_container img,
-.card_container .body_card {
-    pointer-events: none;
-}
+
 
 @keyframes animate {
     0% {
@@ -160,43 +109,6 @@ figure>img {
     }
 }
 
-.form_add {
-    padding: 20px 100px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-}
-
-.input_email,
-.input_avata {
-    grid-column: 2;
-    margin-bottom: 20px;
-}
-
-input {
-    height: 30px;
-    padding-left: 10px;
-}
-
-.input_file {
-    font-family: sans-serif;
-    font-size: 16px;
-    border-radius: 50px;
-    border: 2px solid black;
-    max-width: 400px;
-    padding: 2px;
-    height: 46px;
-}
-
-.input_file::-webkit-file-upload-button {
-    background: black;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.input_file::-webkit-input-placeholder {}
 
 .btn-save,
 .btn-cancel {
