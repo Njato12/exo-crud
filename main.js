@@ -1,5 +1,6 @@
 import './style.css'
 import { creatButtonSA, fetchUser, fetchUsers, postUser } from './lib/crud';
+import { put } from './lib/uptadeUser';
 //import put from './lib/uptadeUser';
 const app = document.querySelector("#app");
 let name = "";
@@ -90,9 +91,10 @@ const creatCard = async () => {
 
     editIconContainer.addEventListener('click', async (ev) => {
       ev.stopPropagation();
-      console.log(ev.target.id);
+      const user = await fetchUser(ev.target.id)
+
       app.removeChild(cardContainer);
-      addData();
+      addData(user);
       //const user = await fetchUser() 
     })
   }
@@ -144,7 +146,7 @@ const userProfil = async (user) => {
 }
 
 
-function addData() {
+function addData(user) {
   const forme = document.createElement("form");
   forme.classList.add("form_add")
   app.appendChild(forme);
@@ -159,18 +161,22 @@ function addData() {
 
   const inputName = document.createElement("input");
   inputName.classList.add("input_name")
+
   inputName.setAttribute("type", "text");
   inputName.setAttribute("placeholder", "name");
   forme.appendChild(inputName)
 
   const inputEmail = document.createElement("input");
-  inputEmail.classList.add("input_email")
+  inputEmail.classList.add("input_email");
+
+
   inputEmail.setAttribute("type", "email");
   inputEmail.setAttribute("placeholder", "email");
   forme.appendChild(inputEmail)
 
   const inputAvatar = document.createElement("input");
-  inputAvatar.classList.add("input_avata")
+  inputAvatar.classList.add("input_avata");
+
   inputAvatar.setAttribute("type", "text");
   inputAvatar.setAttribute("placeholder", "avatar");
   forme.appendChild(inputAvatar)
@@ -179,7 +185,7 @@ function addData() {
 
   })
 
-  const buttonSav = creatButtonSA("submit", "btn-save", "Save");
+  const buttonSav = creatButtonSA("submit", "btn-save", user ? "save" : "creat");
   const buttonCancel = creatButtonSA("button", "btn-cancel", "Cancel");
   forme.appendChild(buttonSav);
   forme.appendChild(buttonCancel);
@@ -192,16 +198,40 @@ function addData() {
   inputAvatar.addEventListener("input", (e) => {
     avatar = e.target.value;
   })
+  if (user) {
+    console.log('user exist', user);
+    inputEmail.value = user.email
+    inputName.value = user.name
+    inputAvatar.value = user.avatar
+    name = user.name
+    email = user.email
+    avatar = user.avatar
+  }
+
+
   buttonSav.addEventListener("click", async (e) => {
     e.preventDefault();
-    await postUser({ name, email, avatar });
     const form = document.querySelector(".form_add");
     app.removeChild(form)
+
+    if (user) {
+      console.log(await put(user.id, { name, email, avatar }))
+    }
+    else {
+      await postUser({ name, email, avatar });
+    }
+
     name = "";
     email = "";
     avatar = "";
 
     await creatCard();
   })
+
+  buttonCancel.addEventListener("click", async (e) => {
+    app.removeChild(forme)
+    creatCard()
+  })
+
 
 }
