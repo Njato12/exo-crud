@@ -44,6 +44,7 @@ const creatCard = async () => {
         <path d="M4 20l1.768 -1.768"></path>
     </svg>`
     editIconContainer.classList.add('edit-icon-container')
+    editIconContainer.id = allUsers[i].id;
     card_user.appendChild(editIconContainer)
 
 
@@ -87,11 +88,16 @@ const creatCard = async () => {
       editIconContainer.classList.remove("hover")
     });
 
-    editIconContainer.addEventListener('click', (ev) => {
+    editIconContainer.addEventListener('click', async (ev) => {
       ev.stopPropagation();
+      console.log(ev.target.id);
+      app.removeChild(cardContainer);
+      addData();
+      //const user = await fetchUser() 
     })
   }
   creatButton()
+
 }
 
 creatCard();

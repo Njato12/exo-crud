@@ -62,6 +62,10 @@
     display: none;
 }
 
+.edit-icon-container svg {
+    pointer-events: none;
+}
+
 .edit-icon-container.hover {
     display: block;
     position: absolute;
