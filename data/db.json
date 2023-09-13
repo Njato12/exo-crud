@@ -1,28 +1,16 @@
 {
   "users": [
     {
-      "name": "",
-      "email": "",
+      "name": "vfdkvore",
+      "email": "goeeg@vvfd",
       "avatar": "",
       "id": 3
     },
     {
-      "name": "",
-      "email": "",
-      "avatar": "",
+      "name": "juheizrfijz",
+      "email": "eizfjiz@sdf",
+      "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.simplilearn.com%2Fimage-processing-article&psig=AOvVaw1z8amy9QFXyaFVfGckC97D&ust=1694695258531000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPjj-fjNp4EDFQAAAAAdAAAAABAJ",
       "id": 4
-    },
-    {
-      "name": "test",
-      "email": "test@gmail.com",
-      "avatar": "",
-      "id": 5
-    },
-    {
-      "name": "",
-      "email": "",
-      "avatar": "",
-      "id": 6
     },
     {
       "name": "Kurtis",
@@ -52,30 +40,6 @@
         "name": "Abernathy Group",
         "catchPhrase": "Implemented secondary concept",
         "bs": "e-enable extensible e-tailers"
-      }
-    },
-    {
-      "id": 9,
-      "name": "Glenna Reichert",
-      "username": "Delphine",
-      "email": "Chaim_McDermott@dana.io",
-      "avatar": "https://reqres.in/img/faces/9-image.jpg",
-      "address": {
-        "street": "Dayna Park",
-        "suite": "Suite 449",
-        "city": "Bartholomebury",
-        "zipcode": "76495-3109",
-        "geo": {
-          "lat": "24.6463",
-          "lng": "-168.8889"
-        }
-      },
-      "phone": "(775)976-6794 x41206",
-      "website": "conrad.com",
-      "company": {
-        "name": "Yost and Sons",
-        "catchPhrase": "Switchable contextually-based project",
-        "bs": "aggregate real-time technologies"
       }
     },
     {
@@ -143,12 +107,6 @@
       "email": "Sincere@april.biz",
       "avatar": "https://reqres.in/img/faces/1-image.jpg",
       "id": 20
-    },
-    {
-      "name": "",
-      "email": "",
-      "avatar": "",
-      "id": 21
     }
   ],
   "products": []

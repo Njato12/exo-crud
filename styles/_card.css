@@ -66,9 +66,24 @@
     pointer-events: none;
 }
 
+.remove-icon-container svg {
+    pointer-events: none;
+}
+
+.remove-icon-container {
+    display: none;
+}
+
 .edit-icon-container.hover {
     display: block;
     position: absolute;
     top: 8px;
     right: 8px;
+}
+
+.remove-icon-container.hover {
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 8px;
 }
